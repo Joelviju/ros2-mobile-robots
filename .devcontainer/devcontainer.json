@@ -1,0 +1,29 @@
+{
+  "name": "ros2-humble-nav2-ml",
+
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  "runArgs": [
+    "--gpus=all",
+    "--net=host",
+
+    "-e", "DISPLAY",
+    "-e", "WAYLAND_DISPLAY",
+    "-e", "XDG_RUNTIME_DIR",
+    "-e", "PULSE_SERVER",
+
+    "-v", "/mnt/wslg:/mnt/wslg"
+  ],
+
+  "extensions": [
+    "ms-vscode.cpptools",
+    "ms-python.python",
+    "ms-iot.vscode-ros"
+  ]
+}
+
