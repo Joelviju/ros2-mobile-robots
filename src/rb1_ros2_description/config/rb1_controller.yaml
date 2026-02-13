@@ -1,0 +1,47 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diffbot_base_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    forward_effort_controller:
+      type: forward_command_controller/ForwardCommandController
+
+
+joint_state_broadcaster:
+  ros__parameters:
+    publish_rate: 50
+
+
+diffbot_base_controller:
+  ros__parameters:
+    publish_rate: 50.0
+
+    left_wheel_names: ["robot_left_wheel_joint"]
+    right_wheel_names: ["robot_right_wheel_joint"]
+
+    wheel_separation: 0.436 
+    wheel_radius:  0.035
+
+    base_frame_id: robot_base_link
+    odom_frame_id: odom
+
+    enable_odom_tf: true
+    open_loop: false
+
+    cmd_vel_timeout: 0.5
+    use_stamped_vel: false
+
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+
+
+forward_effort_controller:
+  ros__parameters:
+    joints:
+      - robot_elevator_platform_joint
+    interface_name: effort
