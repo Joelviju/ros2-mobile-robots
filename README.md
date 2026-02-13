@@ -12,6 +12,14 @@ The implementation is generic data driven and extendable to additional scenarios
 
 ---
 
+
+
+
+## Implementation
+![2026-02-1321-36-47-ezgif com-crop](https://github.com/user-attachments/assets/aa398f59-a93c-413c-b492-619b1876df55)
+![2026-02-1321-39-06-ezgif com-crop](https://github.com/user-attachments/assets/7bb76dd9-648c-4d85-b2d4-114468e4cf64)
+
+
 ## Problem Scope
 
 The system is designed to support a restaurant workflow with three tables.  
