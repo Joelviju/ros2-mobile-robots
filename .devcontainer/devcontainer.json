@@ -10,15 +10,27 @@
 
   "runArgs": [
     "--gpus=all",
-    "--net=host",
-
-    "-e", "DISPLAY",
-    "-e", "WAYLAND_DISPLAY",
-    "-e", "XDG_RUNTIME_DIR",
-    "-e", "PULSE_SERVER",
-
-    "-v", "/mnt/wslg:/mnt/wslg"
+    "--privileged"
   ],
+
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "installCodeServer": true
+    }
+  },
+
+  "forwardPorts": [6080, 5901],
+
+  "portsAttributes": {
+    "6080": {
+      "label": "Desktop Web (noVNC)",
+      "onAutoForward": "notify"
+    },
+    "5901": {
+      "label": "Desktop VNC",
+      "onAutoForward": "notify"
+    }
+  },
 
   "extensions": [
     "ms-vscode.cpptools",
@@ -26,4 +38,3 @@
     "ms-iot.vscode-ros"
   ]
 }
-
